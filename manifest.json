@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AdSkip Elite",
+  "version": "2.0",
+
+  "permissions": ["storage", "scripting", "notifications"],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
