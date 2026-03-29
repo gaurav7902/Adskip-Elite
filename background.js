@@ -1,9 +1,9 @@
 let stats = {
-  ads: 0
+  ads: 0,
 };
 
 const NOTIFICATION_ICON =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAV0lEQVR4Ae3PAQ0AAAgDoGf/zhrDzUEBOkldmJmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZ2V5f2QABifzQWgAAAABJRU5ErkJggg==";
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGUlEQVR4nGO4Y2T0nxLMMGrAqAGjBgwXAwAMAD8f/JQG9gAAAABJRU5ErkJggg==";
 
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === "AD_SKIPPED") {
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener((msg) => {
       type: "basic",
       iconUrl: NOTIFICATION_ICON,
       title: "Ad Skipped",
-      message: "Skipped an ad 🎉"
+      message: "An ad was automatically skipped.",
     });
 
     chrome.storage.local.set({ stats });

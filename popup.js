@@ -4,12 +4,16 @@ const toggleBtn = document.getElementById("toggle");
 
 function renderEnabled(enabled) {
   const isEnabled = enabled !== false;
-  statusEl.innerText = isEnabled ? "Auto-Skip is ACTIVE" : "Auto-Skip is PAUSED";
+  statusEl.innerText = isEnabled
+    ? "Auto-Skip is ACTIVE"
+    : "Auto-Skip is PAUSED";
+  statusEl.className = isEnabled ? "status" : "status paused";
   toggleBtn.innerText = isEnabled ? "Pause" : "Resume";
 }
 
 chrome.storage.local.get(["stats", "enabled"], (res) => {
-  const adCount = res.stats && typeof res.stats.ads === "number" ? res.stats.ads : 0;
+  const adCount =
+    res.stats && typeof res.stats.ads === "number" ? res.stats.ads : 0;
   adsEl.innerText = String(adCount);
   renderEnabled(res.enabled);
 });
@@ -30,7 +34,8 @@ chrome.storage.onChanged.addListener((changes, area) => {
 
   if (changes.stats) {
     const nextStats = changes.stats.newValue;
-    const adCount = nextStats && typeof nextStats.ads === "number" ? nextStats.ads : 0;
+    const adCount =
+      nextStats && typeof nextStats.ads === "number" ? nextStats.ads : 0;
     adsEl.innerText = String(adCount);
   }
 

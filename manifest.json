@@ -3,14 +3,14 @@
   "name": "AdSkip Elite",
   "version": "1.0",
 
-  "permissions": ["storage", "scripting", "notifications"],
+  "permissions": ["storage", "notifications"],
 
   "action": {
     "default_popup": "popup.html"
   },
 
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
 
   "content_scripts": [

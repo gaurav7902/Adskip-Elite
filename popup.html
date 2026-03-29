@@ -4,14 +4,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>AdSkip Elite</h2>
+    <div class="container">
+      <h2>AdSkip Elite</h2>
 
-    <p id="status">Auto-Skip is ACTIVE</p>
+      <div class="card">
+        <p class="label">Status</p>
+        <p id="status" class="status">Auto-Skip is ACTIVE</p>
+        <button id="toggle">Pause</button>
+      </div>
 
-    <button id="toggle">Toggle</button>
-
-    <div>
-      <p>Skipped Today: <span id="ads">0</span></p>
+      <div class="card">
+        <p class="label">Ads Skipped</p>
+        <p class="count"><span id="ads">0</span></p>
+      </div>
     </div>
 
     <script src="popup.js"></script>

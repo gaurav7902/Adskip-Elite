@@ -1,13 +1,28 @@
-<h2>Settings</h2>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>AdSkip Elite</h2>
 
-<label>
-  Skip ads immediately
-  <input type="checkbox" id="instant">
-</label>
+      <div class="card">
+        <p class="label">Settings</p>
 
-<label>
-  Show notification
-  <input type="checkbox" id="notify">
-</label>
+        <label class="toggle-row">
+          <span>Skip ads immediately</span>
+          <input type="checkbox" id="instant" />
+        </label>
 
-<script src="settings.js"></script>
+        <label class="toggle-row">
+          <span>Show notification</span>
+          <input type="checkbox" id="notify" />
+        </label>
+      </div>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
